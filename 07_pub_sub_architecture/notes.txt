@@ -1,0 +1,12 @@
+Pub sub architecture is generally used for notification systems. It is used to send notifications to users when something happens. The notifications could be email, sms, push notifications etc.
+
+Pub -> Publisher
+Sub -> Subscriber
+
+Publisher is a service that sends notifications to subscribers. Subscriber is a service that receives notifications from publisher.
+
+Publisher sends notifications through a channel. The channel could be different for different type of notifications. For example, email notifications could be sent through email channel and sms notifications could be sent through sms channel.
+
+Redis can be used as an interface layer between publisher and subscriber. Redis can be used as a message broker or channel in the pub sub architecture.
+
+Subscribers can also subscribe to a specific channel. For example, if you want to receive email notifications, you can subscribe to the email channel. If you want to receive sms notifications, you can subscribe to the sms channel as a subscriber.
