@@ -1,0 +1,9 @@
+Queue Architecture for scalability:
+
+1. Queue: Redis provides queue to store jobs. Each job in a queue is known as a "task". The task is to be processed by a separate worker. This is done to process the tasks in background.
+
+2. Worker: Worker is a processor used to operate on tasks in a queue. There are generally two types of workers:
+a. Producer: Worker that adds tasks to the queue. Could be apis like '/register' which adds mails to the queue that are to be verified.
+b. Consumer: Worker that processes the tasks/jobs in the queue. For each queue, there could be one or more consumers that process the queue depending on the load.
+
+Each job/task in a queue contains the information about the entity to be processed, it could be the main entity itself or some metadata depending on the size of the entity. Like if mails to be sent are stored in a queue, then each queue can conatin the mails to be sent. But if there is another queue that stores videos to be uploaded, then instead of storing the videos, we can store the metadata of the video to be uploaded like some cloud url, s3 bucket url or reference. This is done to reduce the size of the entity being stored in the queue.
