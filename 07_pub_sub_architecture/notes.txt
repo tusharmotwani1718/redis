@@ -10,3 +10,6 @@ Publisher sends notifications through a channel. The channel could be different 
 Redis can be used as an interface layer between publisher and subscriber. Redis can be used as a message broker or channel in the pub sub architecture.
 
 Subscribers can also subscribe to a specific channel. For example, if you want to receive email notifications, you can subscribe to the email channel. If you want to receive sms notifications, you can subscribe to the sms channel as a subscriber.
+
+
+Both the publisher and subscribers are separate processors or functions, hence run in parallel.
